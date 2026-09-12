@@ -1,0 +1,25 @@
+/* Self-contained opening visual: no external or embedded image dependency. */
+.cover .hero {
+  inset: -8%;
+  background-color: #071522;
+  background-image:
+    radial-gradient(circle at 18% 24%, #ffd45a 0 3%, transparent 3.2%),
+    radial-gradient(circle at 36% 17%, #47e6d3 0 4%, transparent 4.2%),
+    radial-gradient(circle at 57% 28%, #ff5c88 0 5%, transparent 5.2%),
+    radial-gradient(circle at 78% 16%, #36c6ff 0 4.5%, transparent 4.7%),
+    radial-gradient(circle at 87% 42%, #ff784f 0 5.5%, transparent 5.7%),
+    radial-gradient(circle at 68% 61%, #9de66e 0 4.8%, transparent 5%),
+    radial-gradient(circle at 43% 67%, #a477ff 0 5.2%, transparent 5.4%),
+    radial-gradient(circle at 20% 73%, #20b5a5 0 6%, transparent 6.2%),
+    radial-gradient(circle at 8% 49%, #5f72ff 0 4%, transparent 4.2%),
+    linear-gradient(135deg, #0b2841, #040a12 70%);
+  filter: saturate(.9);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
