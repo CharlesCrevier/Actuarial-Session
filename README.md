@@ -21,8 +21,14 @@ Puis ouvrir `http://localhost:8000` et appuyer sur `F` pour le plein écran.
 
 La présentation fonctionne hors connexion et ne dépend d’aucune bibliothèque externe.
 
-## Fond vidéo
+## Fond naturel animé
 
-La scène d’ouverture utilise un plan lent de nuages, assombri pour préserver la lisibilité sur grand écran. La vidéo en ligne provient de [Pixabay](https://pixabay.com/videos/clouds-cloudscape-sky-air-1154/) et relève de la licence de contenu Pixabay.
+La présentation utilise une scène originale générée en temps réel : forêt profonde, cascade, brume, feuilles et lumière mouvante. Elle ne nécessite aucune connexion internet.
 
-Pour une utilisation totalement hors connexion, télécharger la version MP4 dans `assets/nature-background.mp4`. La présentation essaie d’abord ce fichier local, puis la source en ligne. Si aucune vidéo n’est disponible, le fond abstrait animé reste visible automatiquement.
+Pour produire un fichier HTML unique à copier sur le bureau :
+
+```bash
+node build-offline.mjs
+```
+
+Le fichier final se trouve dans `dist/Actuarial-Session-OFFLINE.html`.
