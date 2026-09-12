@@ -9,12 +9,9 @@
 </head>
 <body>
   <main id="deck" aria-live="polite">
+    <canvas id="nature-bg" aria-hidden="true"></canvas>
     <section class="slide cover active" data-title="Ouverture">
       <div class="hero" aria-hidden="true"></div>
-      <video class="nature-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-        <source src="assets/nature-background.mp4" type="video/mp4">
-        <source src="https://cdn.pixabay.com/video/2015/10/27/1154-143017724_large.mp4" type="video/mp4">
-      </video>
       <div class="shade"></div>
       <div class="cover-copy">
         <p class="eyebrow fragment">Cours 15 · Gouvernance digitale et financière</p>
@@ -146,6 +143,7 @@
   <div class="chrome" aria-hidden="true"><div id="progress"></div><span id="counter">01 / 13</span></div>
   <button id="helpBtn" aria-label="Afficher les commandes">?</button>
   <dialog id="help"><h3>Commandes</h3><p><kbd>→</kbd> <kbd>Espace</kbd> ou clic&nbsp;: avancer</p><p><kbd>←</kbd>&nbsp;: revenir</p><p><kbd>F</kbd>&nbsp;: plein écran</p><p><kbd>O</kbd>&nbsp;: vue d’ensemble</p><button>Fermer</button></dialog>
+  <script src="forest.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
