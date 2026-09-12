@@ -16,18 +16,17 @@
   filter: saturate(.9);
 }
 
-.nature-video {
+#nature-bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 42%;
-  opacity: .58;
-  filter: saturate(.72) contrast(1.08) brightness(.72) hue-rotate(8deg);
-  transform: scale(1.035);
   z-index: 0;
 }
+
+.slide { background: linear-gradient(115deg, rgba(2,9,16,.92), rgba(5,22,28,.56) 52%, rgba(2,8,14,.82)); z-index: 1; }
+.slide.duality, .slide.study, .slide.reasons, .slide.guidelines, .slide.process, .slide.project, .slide.objectives { backdrop-filter: blur(1.5px) saturate(.78); }
+.slide::after { content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background:radial-gradient(circle at 72% 20%, rgba(101,230,189,.13), transparent 35%), linear-gradient(0deg, rgba(1,7,12,.48), transparent 45%); }
 
 .cover .shade {
   z-index: 1;
@@ -44,5 +43,5 @@
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
   }
-  .nature-video { display: none; }
+  #nature-bg { opacity: .6; }
 }
