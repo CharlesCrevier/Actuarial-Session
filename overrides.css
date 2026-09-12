@@ -16,6 +16,9 @@
   filter: saturate(.9);
 }
 
+.cover { background: transparent; }
+.cover::after, .cover .hero { display: none; }
+
 #nature-bg {
   position: absolute;
   inset: 0;
