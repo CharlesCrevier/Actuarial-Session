@@ -1,6 +1,6 @@
 # Actuarial Session
 
-Présentation web interactive en français, optimisée pour une projection 10 m × 5 m.
+Présentation web interactive en français, optimisée pour une projection 10 m × 5 m et enrichie par les besoins exprimés par les participants de l’Académie 2026.
 
 ## Lancer
 
