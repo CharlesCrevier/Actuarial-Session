@@ -25,8 +25,25 @@
 }
 
 .slide { background: linear-gradient(115deg, rgba(2,9,16,.92), rgba(5,22,28,.56) 52%, rgba(2,8,14,.82)); z-index: 1; }
+.slide.finale:not(.active) { display: none; }
+.slide.finale.active { display: grid; }
 .slide.duality, .slide.study, .slide.reasons, .slide.guidelines, .slide.process, .slide.project, .slide.objectives { backdrop-filter: blur(1.5px) saturate(.78); }
 .slide::after { content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background:radial-gradient(circle at 72% 20%, rgba(101,230,189,.13), transparent 35%), linear-gradient(0deg, rgba(1,7,12,.48), transparent 45%); }
+
+header h2, .cover h1, .finale h2 { text-shadow: 0 4px 24px rgba(0,0,0,.78), 0 1px 2px #000; }
+header p, .eyebrow { text-shadow: 0 2px 12px #000; }
+.split article, .definition, .pan, .process-line div, .steps div, .radar span {
+  background-color: rgba(4,15,22,.76);
+  box-shadow: 0 22px 55px rgba(0,0,0,.42), inset 0 1px rgba(255,255,255,.05);
+}
+blockquote {
+  background: linear-gradient(90deg, rgba(2,11,18,.84), rgba(2,11,18,.28));
+  border-radius: 0 1vw 1vw 0;
+  padding: 1.1% 2%;
+  text-shadow: 0 3px 18px #000;
+}
+.objective-list li { background: linear-gradient(90deg, rgba(3,15,22,.75), transparent); padding-left: 1.2vw; border-radius: .4vw; }
+.finale h2 { background: rgba(1,9,15,.48); border: 1px solid rgba(255,255,255,.08); border-radius: 1.4vw; padding: 2.5vw 3.5vw; backdrop-filter: blur(7px); }
 
 .cover .shade {
   z-index: 1;
