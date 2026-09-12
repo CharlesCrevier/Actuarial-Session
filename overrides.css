@@ -62,6 +62,22 @@ blockquote {
 .question-grid b { color:var(--cyan); letter-spacing:.16em; font-size:.8vw; }
 .question-grid p { margin-top:.65vw; font-family:Georgia,serif; font-size:1.25vw; line-height:1.3; }
 
+.duality .split article p { font-size:clamp(22px,1.7vw,38px); line-height:1.08; }
+.duality .split article small { display:block; margin-top:.7vw; font-size:clamp(14px,.95vw,21px); }
+.timeline > div:not(.time-axis) { padding:0 1.4vw; }
+.timeline p { font-size:clamp(15px,1.05vw,23px); line-height:1.45; }
+.clarity { max-width:35%; }
+.clarity small { display:block; margin-top:.8vw; color:#b9c7d8; font-size:.82vw; line-height:1.4; }
+.objectives .objective-list { margin-top:2%; }
+.objectives .objective-list li { font-size:clamp(15px,1.05vw,24px); line-height:1.25; padding:1.05vh 0; }
+.study .study-context { position:absolute; top:20%; left:6.5%; width:48%; font-size:clamp(14px,1vw,22px); line-height:1.45; color:#d7e3ef; }
+.study .horizon { width:42%; margin-left:auto; margin-top:1%; }
+.study .definition { margin-top:0; }
+.reasons header h2 { max-width:95%; font-size:clamp(34px,3.25vw,70px); }
+.reason-list { list-style:none; padding:0; margin:3% 0 0; display:grid; grid-template-columns:1fr 1fr; gap:1.2vw 3vw; }
+.reason-list li { min-height:6.2vw; padding:1vw 1.2vw 1vw 3.6vw; position:relative; display:flex; align-items:center; border-bottom:1px solid #ffffff25; background:linear-gradient(90deg,rgba(2,18,27,.8),transparent); border-radius:.5vw; font-size:clamp(14px,1vw,22px); line-height:1.3; }
+.reason-list b { position:absolute; left:1vw; color:var(--cyan); font-size:.72vw; letter-spacing:.14em; }
+
 .cover .shade {
   z-index: 1;
   background:
@@ -79,3 +95,55 @@ blockquote {
   }
   #nature-bg { opacity: .6; }
 }
+
+/* Full eight-stage actuarial workflow — optimized for a 10 m × 5 m screen. */
+.workflow { padding: 3.2% 3.2% 4.3%; }
+.workflow header h2 { max-width: 100%; margin-top: .45%; font-size: clamp(30px, 2.65vw, 58px); }
+.workflow-board {
+  height: 73%;
+  margin-top: 1.8%;
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: .55vw;
+}
+.workflow-board article {
+  min-width: 0;
+  padding: .85vw .55vw .65vw;
+  border: 1px solid rgba(255,255,255,.17);
+  border-radius: 1vw;
+  background: linear-gradient(180deg, rgba(13,54,74,.94), rgba(3,20,30,.9));
+  box-shadow: 0 1.4vw 2.5vw rgba(0,0,0,.38), inset 0 1px rgba(255,255,255,.08);
+  display: flex;
+  flex-direction: column;
+  animation: workflowGlow 8s ease-in-out infinite alternate;
+}
+.workflow-board article:nth-child(2n) { background: linear-gradient(180deg, rgba(15,69,70,.94), rgba(3,24,30,.9)); animation-delay: -4s; }
+.workflow-board h3 {
+  min-height: 4.25vw;
+  margin: 0 0 .6vw;
+  color: #f7fbff;
+  font-size: clamp(13px, 1.03vw, 23px);
+  line-height: 1.04;
+  letter-spacing: -.02em;
+  text-align: center;
+}
+.workflow-board h3 b { display:block; margin-bottom:.32vw; color:var(--cyan); font-size:.62vw; letter-spacing:.18em; }
+.workflow-board ul { flex: 1; margin: 0; padding: 0; list-style: none; display:flex; flex-direction:column; gap:.38vw; }
+.workflow-board li {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  padding: .25vw .34vw;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: .48vw;
+  background: linear-gradient(135deg, rgba(37,120,177,.8), rgba(45,84,146,.76));
+  color: #fff;
+  font-size: clamp(9px, .66vw, 15px);
+  font-weight: 720;
+  line-height: 1.12;
+  text-align: center;
+  text-shadow: 0 2px 7px #00101c;
+}
+.workflow-board article:nth-child(2n) li { background: linear-gradient(135deg, rgba(21,139,128,.76), rgba(34,82,122,.82)); }
+@keyframes workflowGlow { to { border-color:rgba(71,230,211,.42); box-shadow:0 1.4vw 2.8vw rgba(0,0,0,.42), 0 0 1.5vw rgba(71,230,211,.09); } }
