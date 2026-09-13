@@ -190,3 +190,26 @@ blockquote {
 .scenario-lines b { text-align:right; }
 .scenario-lines i { height:.25vw; background:linear-gradient(90deg,var(--stage),#ffffffaa); transform-origin:left; animation:grow 1.8s var(--ease) both; }
 .scenario-lines span { color:#fff; font-weight:800; }
+
+/* Slide 03 — insights from participants registered in Course 15. */
+.cohort-insights { padding:0; background:#030a10; }
+.cohort-insights .insight-photo { position:absolute; inset:0; background:url('media/course15-participants.jpg') center/cover no-repeat; animation:insightKen 22s ease-in-out infinite alternate; }
+.cohort-insights .insight-shade { position:absolute; inset:0; background:linear-gradient(90deg,rgba(2,8,14,.98) 0%,rgba(3,12,20,.94) 42%,rgba(3,11,18,.54) 65%,rgba(3,9,15,.1) 100%),linear-gradient(0deg,rgba(2,8,13,.72),transparent 55%); }
+.insight-copy { position:absolute; z-index:2; left:5.6%; top:5.7%; width:58%; height:88%; }
+.insight-copy header { margin-bottom:1.1vw; }
+.insight-copy header h2 { max-width:98%; font-size:clamp(34px,3.2vw,68px); line-height:.98; }
+.insight-five { list-style:none; padding:0; margin:1.2vw 0 0; display:grid; grid-template-columns:1fr 1fr; gap:.7vw 1.2vw; }
+.insight-five li { min-height:5.15vw; display:grid; grid-template-columns:3.2vw 1fr; gap:.75vw; align-items:center; padding:.65vw .8vw; border-left:.24vw solid var(--cyan); background:linear-gradient(90deg,rgba(4,23,32,.94),rgba(4,22,29,.55)); box-shadow:0 .8vw 1.8vw #0005; }
+.insight-five li:last-child { grid-column:1/3; width:49%; justify-self:center; }
+.insight-five strong { color:var(--cyan); font-size:clamp(27px,2.25vw,48px); line-height:1; text-align:center; }
+.insight-five span { color:#c8d8e2; font-size:clamp(10px,.68vw,15px); line-height:1.2; }
+.insight-five b { display:block; margin-bottom:.22vw; color:#fff; font-size:clamp(13px,.92vw,20px); }
+.insight-source { position:absolute; left:0; bottom:0; max-width:92%; color:#91a8b6; font-size:.61vw; letter-spacing:.04em; }
+@keyframes insightKen { to { transform:scale(1.035) translateX(-.7%); } }
+
+/* More complete ISSA guidance slide. */
+.guidelines .steps { margin-top:6%; }
+.guidelines .steps div { min-height:23vw; padding:1.25vw; }
+.guidelines .steps span { font-size:clamp(12px,.88vw,20px); line-height:1.25; text-transform:none; }
+.guidelines .steps small { display:block; margin-top:1vw; color:#c2d1df; font-size:clamp(10px,.67vw,15px); line-height:1.42; }
+.guideline-note { position:absolute; left:6.5%; right:6.5%; bottom:5.3%; text-align:center; color:#c7d7e4; font-size:clamp(13px,.9vw,20px); }
