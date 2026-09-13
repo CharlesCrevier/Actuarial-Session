@@ -225,3 +225,19 @@ blockquote {
 .guidelines .steps span { font-size:clamp(12px,.88vw,20px); line-height:1.25; text-transform:none; }
 .guidelines .steps small { display:block; margin-top:1vw; color:#c2d1df; font-size:clamp(10px,.67vw,15px); line-height:1.42; }
 .guideline-note { position:absolute; left:6.5%; right:6.5%; bottom:5.3%; text-align:center; color:#c7d7e4; font-size:clamp(13px,.9vw,20px); }
+
+/* A distinct contextual photograph on every slide. */
+.slide.photo-backed::before {
+  content:""; position:absolute; inset:-3%; width:auto; height:auto; border-radius:0;
+  z-index:-3; opacity:1; filter:saturate(.82) contrast(1.04);
+  background-image:var(--slide-photo); background-size:300% 200%;
+  background-position:var(--slide-position); background-repeat:no-repeat;
+  animation:slidePhotoKen 24s cubic-bezier(.4,0,.2,1) infinite alternate;
+}
+.slide.photo-backed[style*="media/duality"]::before,
+.slide.photo-backed[style*="course15-participants"]::before { background-size:cover; }
+.slide.photo-backed::after {
+  background:linear-gradient(90deg,rgba(2,10,16,.92),rgba(3,18,23,.64) 55%,rgba(2,9,14,.42)),linear-gradient(0deg,rgba(0,0,0,.64),transparent 52%,rgba(0,0,0,.25));
+}
+@keyframes slidePhotoKen { from{transform:scale(1.02) translate3d(-.4%,0,0)} to{transform:scale(1.075) translate3d(.7%,-.45%,0)} }
+@media (prefers-reduced-motion:reduce) { .slide.photo-backed::before { animation:none; } }
