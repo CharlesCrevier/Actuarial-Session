@@ -207,6 +207,18 @@ blockquote {
 .insight-source { position:absolute; left:0; bottom:0; max-width:92%; color:#91a8b6; font-size:.61vw; letter-spacing:.04em; }
 @keyframes insightKen { to { transform:scale(1.035) translateX(-.7%); } }
 
+/* Dualités — portraits institutionnels inspirés des régions représentées au cours 15. */
+.slide.duality { isolation:isolate; background:#071512; overflow:hidden; }
+.slide.duality::before { content:""; position:absolute; inset:-3%; z-index:-2; background-image:var(--photo); background-size:cover; background-position:center; animation:dualityKen 24s cubic-bezier(.4,0,.2,1) infinite alternate; }
+.slide.duality::after { content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background:linear-gradient(90deg,rgba(3,15,14,.90) 0%,rgba(3,15,14,.72) 44%,rgba(3,15,14,.34) 72%,rgba(3,15,14,.52) 100%),linear-gradient(0deg,rgba(0,0,0,.72) 0%,transparent 44%,rgba(0,0,0,.38) 100%); }
+.slide.duality .split article,
+.slide.duality .timeline > div:not(.time-axis),
+.slide.duality .balance .pan,
+.slide.duality .clarity,
+.slide.duality .orbit article { background:rgba(6,22,20,.57); border:1px solid rgba(255,255,255,.18); box-shadow:0 20px 54px rgba(0,0,0,.28); backdrop-filter:blur(10px); }
+@keyframes dualityKen { from { transform:scale(1.03) translate3d(-.8%,0,0); } to { transform:scale(1.10) translate3d(.8%,-.6%,0); } }
+@media (prefers-reduced-motion:reduce) { .slide.duality::before { animation:none; } }
+
 /* More complete ISSA guidance slide. */
 .guidelines .steps { margin-top:6%; }
 .guidelines .steps div { min-height:23vw; padding:1.25vw; }
