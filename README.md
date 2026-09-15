@@ -32,3 +32,5 @@ node build-offline.mjs
 ```
 
 Le fichier final se trouve dans `dist/Actuarial-Session-OFFLINE.html`.
+
+<!-- GitHub Pages deployment refresh: Session 3, 21 slides, 2026-09-15 -->
