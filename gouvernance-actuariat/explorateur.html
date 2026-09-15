@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Explorateur des lignes directrices</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/common.css">
+</head>
+<body>
+<div id="site-header-mount"></div>
+<main>
+  <div class="section-title">Explorateur des lignes directrices</div>
+  <p class="section-note">
+    Les 72 lignes directrices de bonne gouvernance de l’AISS (édition 2025), avec pour chacune une note sur son
+    implication pour la pratique actuarielle. Filtrez par niveau de lien ou par domaine, ou recherchez un mot-clé.
+  </p>
+
+  <div class="filter-bar">
+    <div class="filter-row">
+      <span class="filter-label">Lien actuariel</span>
+      <button class="filter-btn active" data-tier="all">Toutes (72)</button>
+      <button class="filter-btn" data-tier="direct">Direct (12)</button>
+      <button class="filter-btn" data-tier="indirect">Indirect (17)</button>
+      <button class="filter-btn" data-tier="fondamental">Fondamental (43)</button>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Filtrer</span>
+      <input type="text" class="search-box" id="gl-search" placeholder="Rechercher un mot-clé…">
+      <select class="select-box" id="gl-domain"><option value="all">Tous les domaines</option></select>
+    </div>
+  </div>
+
+  <div class="gl-grid" id="gl-grid"></div>
+</main>
+<div id="site-footer-mount"></div>
+<script src="assets/common.js"></script>
+<script src="assets/guidelines-data.js"></script>
+<script>
+  GovAct.renderHeader({ titleHtml: 'Explorateur des lignes directrices', subtitle: 'Lignes directrices de bonne gouvernance de l’AISS (2025) × pratique actuarielle', activeKey: 'explorateur' });
+  GovAct.renderFooter();
+
+  (function () {
+    var GUIDELINES = GovAct.GUIDELINES, DOMAINS = GovAct.DOMAINS;
+    var domainByKey = {}; DOMAINS.forEach(function (d) { domainByKey[d.key] = d; });
+    var domainSelect = document.getElementById('gl-domain');
+    DOMAINS.forEach(function (d) {
+      var opt = document.createElement('option'); opt.value = d.key; opt.textContent = d.label;
+      domainSelect.appendChild(opt);
+    });
+
+    var state = { tier: 'all', domain: 'all', q: '' };
+    var grid = document.getElementById('gl-grid');
+
+    function render() {
+      var q = state.q.trim().toLowerCase();
+      var rows = GUIDELINES.filter(function (r) {
+        if (state.tier !== 'all' && r.tier !== state.tier) return false;
+        if (state.domain !== 'all' && r.domain !== state.domain) return false;
+        if (q && (r.title.toLowerCase().indexOf(q) < 0 && r.note.toLowerCase().indexOf(q) < 0)) return false;
+        return true;
+      });
+      if (!rows.length) { grid.innerHTML = '<div class="empty-msg">Aucune ligne directrice ne correspond à ces filtres.</div>'; return; }
+      grid.innerHTML = rows.map(function (r) {
+        var tierLabel = r.tier === 'direct' ? 'Lien direct' : r.tier === 'indirect' ? 'Lien indirect' : 'Fondamental';
+        return '<div class="gl-card ' + r.tier + '">' +
+          '<div class="gl-head"><span class="gl-num">Ligne directrice ' + r.num + '</span><span class="tier-badge ' + r.tier + '">' + tierLabel + '</span></div>' +
+          '<h4>' + r.title + '</h4>' +
+          '<div class="gl-domain">' + domainByKey[r.domain].label + '</div>' +
+          '<p>' + r.note + '</p>' +
+          '</div>';
+      }).join('');
+    }
+
+    document.querySelectorAll('.filter-btn[data-tier]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.filter-btn[data-tier]').forEach(function (b) { b.classList.toggle('active', b === btn); });
+        state.tier = btn.getAttribute('data-tier'); render();
+      });
+    });
+    domainSelect.addEventListener('change', function () { state.domain = domainSelect.value; render(); });
+    document.getElementById('gl-search').addEventListener('input', function (e) { state.q = e.target.value; render(); });
+
+    render();
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Paysage Gouvernance–Actuariat</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="assets/common.css">
+</head>
+<body>
+<div id="site-header-mount"></div>
+<main>
+  <div class="section-title">Paysage Gouvernance–Actuariat</div>
+  <p class="section-note">
+    Ce paysage retrace le chemin qui va des 14 domaines des Lignes directrices de l’AISS en matière de bonne
+    gouvernance jusqu’aux résultats institutionnels visés, en passant par leur niveau de lien avec la pratique
+    actuarielle, les fonctions actuarielles qu’ils outillent et les leviers concrets qui les traduisent en action.
+    Tous les comptages proviennent d’une lecture intégrale des 72 lignes directrices — voir l’Explorateur pour le
+    détail ligne par ligne.
+  </p>
+  <div id="landscape-mount"></div>
+</main>
+<div id="site-footer-mount"></div>
+<script src="assets/common.js"></script>
+<script src="assets/guidelines-data.js"></script>
+<script src="assets/landscape-data.js"></script>
+<script src="assets/landscape.js"></script>
+<script>
+  GovAct.renderHeader({ titleHtml: 'Paysage Gouvernance–Actuariat', subtitle: 'Lignes directrices de bonne gouvernance de l’AISS (2025) × pratique actuarielle', activeKey: 'paysage' });
+  GovAct.renderFooter();
+  GovAct.mountLandscape('landscape-mount');
+</script>
+</body>
+</html>
